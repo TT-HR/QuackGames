@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="QuackGames:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="QuackGames-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="QuackGames:war exploded" />
+    </root>
+  </artifact>
+</component>
