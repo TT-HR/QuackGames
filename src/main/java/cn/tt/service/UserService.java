@@ -1,4 +1,4 @@
-package cn.tt.controller;
+package cn.tt.service;
 
 import cn.tt.bean.User;
 import cn.tt.mapper.UserMapper;
