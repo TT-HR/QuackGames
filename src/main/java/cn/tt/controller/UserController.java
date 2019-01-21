@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
     @Setter@Getter
-    private JSON json;
+    private String json;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(String username,String pwd){
@@ -29,8 +29,10 @@ public class UserController {
         }
     }
     @RequestMapping(value = "/reg")
-    public String reg(User user){
+    public String reg(User user,int uid){
         userMapper.reg(user);
-        return "index";
+        List<User> users=userMapper.findUser(uid);
+        json=JSON.toJSONString(users);
+        return json;
     }
 }

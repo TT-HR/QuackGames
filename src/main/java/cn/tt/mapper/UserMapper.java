@@ -11,4 +11,6 @@ public interface UserMapper {
     List<User> login(String username,String pwd);
     @Insert("insert into user(username,pwd) values(#{username},#{pwd})")
     void reg(User user);
+    @Select("select * from user where uid=#{uid}")
+    List<User> findUser(int uid);
 }
