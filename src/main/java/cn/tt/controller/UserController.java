@@ -30,12 +30,9 @@ public class UserController {
             return "error";
         }
     }
-    @ResponseBody
-    @RequestMapping(value = "/reg")
-    public String reg(User user,int uid){
+    @RequestMapping(value = "/reg",method = RequestMethod.POST)
+    public String reg(User user){
         userMapper.reg(user);
-        List<User> users=userMapper.findUser(uid);
-        json=JSON.toJSONString(users);
-        return json;
+        return "index";
     }
 }

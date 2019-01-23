@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <form action="login" method="post">
@@ -10,8 +11,31 @@
     密码<input type="text" name="pwd">
     <input type="submit" value="login">
 </form>
-<form action="/reg">
-
+<form action="reg" method="post">
+    用户名<input type="text" name="username">
+    密码<input type="text" name="pwd">
+    <input type="submit" value="注册">
 </form>
+<table>
+    <thead>
+    </thead>
+</table>
+
 </body>
+<script type="text/javascript">
+    $(function () {
+        $.post(
+            "reg",
+            function (data) {
+                alert("注册成功")
+                var json=JSON.parse(data);
+                var obj="";
+                for (i in json){
+                    obj+="<p>"+json[i].username+"</p>";
+                }
+                $("thead").append(obj);
+            }
+        )
+    })
+</script>
 </html>

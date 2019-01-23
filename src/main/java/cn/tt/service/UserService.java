@@ -20,8 +20,4 @@ public class UserService implements UserMapper{
         userMapper.reg(user);
     }
 
-    public List<User> findUser(int uid) {
-        return userMapper.findUser(uid);
-    }
-
 }
